@@ -15,9 +15,9 @@ module.exports = {
 
       // First Rule
       {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader']
+        use: ['babel-loader']
       },
 
       // Second Rule

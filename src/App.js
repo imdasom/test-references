@@ -1,17 +1,21 @@
+//react library
 import React from 'react';
 import {Switch, BrowserRouter as Router, Route} from 'react-router-dom';
-
-import Home from './pages/Home';
+//3rd party library
+// import hljs from 'highlight.js/lib/highlight';
+// import javascript from 'highlight.js/lib/languages/javascript';
+// import 'highlight.js/styles/androidstudio.css';
+// hljs.registerLanguage('javascript', javascript);
+//project component
 import ReactTest from './pages/ReactTest';
 import NoMatch from './pages/NoMatch';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/tdd">
       <div>
         <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/react" component={ReactTest}/>
+          <Route exact path="/" component={ReactTest}/>
           <Route component={NoMatch}/>
         </Switch>
       </div>
