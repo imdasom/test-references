@@ -39,9 +39,12 @@ class DynamicChildComponent extends Component {
 
 // describe('input 관련 테스트', () => {
 //   it('타겟을 특정텍스트로 지정할 수 없는 경우 > aria-label을 사용한다', () => {
+//     //given
 //     const { getAllByLabelText, getByText } = render(<DynamicChildComponent />);
 //     const $buttonAdd = getByText('+ 옵션추가');
+//     //when
 //     fireEvent.click($buttonAdd);
+//     //then
 //     expect(getAllByLabelText('option-name').length).toBe(2);
 //   });
 // });

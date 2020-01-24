@@ -67,12 +67,12 @@ const TestExampleSource = {
       tagList: [{type: "REACT", title: "React"}, {type: "TESTING_LIBRARY", title: "@testing/library"}, {type: "JEST", title: "Jest"}],
       code: {codeType: "javascript", content: `it('타겟을 특정텍스트로 지정할 수 없는 경우 > aria-label을 사용한다', () => {
   //given
-  const { getByLabel, getByText } = render(<DynamicChildComponent />);
+  const { getAllByLabelText, getByText } = render(<DynamicChildComponent />);
   const $buttonAdd = getByText('+ 옵션추가');
   //when
   fireEvent.click($buttonAdd);
   //then
-  expect(getByLabel('option-name').length).toBe(2);
+  expect(getAllByLabelText('option-name').length).toBe(2);
 });`},
       childComponent: (()=>{
         return (
@@ -91,7 +91,7 @@ const TestExampleSource = {
   await wait();
   const $colorItem3 = getByTestId('ColorItem3');
   const $redColor = container.querySelector('div[title="#D0021B"]');
-  //wehn
+  //when
   fireEvent.click($colorItem3);
   fireEvent.click($redColor);
   //then
