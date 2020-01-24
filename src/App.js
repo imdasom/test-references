@@ -9,6 +9,8 @@ import {Switch, BrowserRouter as Router, Route} from 'react-router-dom';
 //project component
 import ReactTest from './pages/ReactTest';
 import NoMatch from './pages/NoMatch';
+//style
+import './style/main.css';
 
 const App = () => {
   return (
