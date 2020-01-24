@@ -18,6 +18,7 @@ const TestExampleCode = (props) => (
 const TestExample = (props) => (
   <div>
     <h4>{ props.title }</h4>
+    <p>{ props.description }</p>
     <p>
       {
         props.tagList.length === 0 ? '' :
@@ -34,7 +35,7 @@ const TestExample = (props) => (
     <div className="container">
       <div className="row">
         <div className="col"><TestExampleCode {...props.code}/></div>
-        <div className="col" style={{marginBottom:"1rem", backgroundColor:"#efefef"}}>
+        <div className="col" style={{padding:"10px", marginBottom:"1rem", backgroundColor:"#efefef"}}>
           <div dangerouslySetInnerHTML={ {__html: props.html} } />
           <div>{props.childComponent}</div>
         </div>
