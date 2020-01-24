@@ -7,7 +7,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: '[name].[hash].js'
+    filename: '[name].[hash].js',
   },
   devtool: 'inline-source-map',
   module: {
@@ -17,7 +17,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
 
       // Second Rule
@@ -25,30 +25,30 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: 'style-loader',
           },
           {
             loader: 'css-loader',
             options: {
               modules: true,
               localsConvention: 'camelCase',
-              sourceMap: true
-            }
-          }
-        ]
-      }
-    ]
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       // favicon: 'public/favicon.ico'
-    })
+    }),
   ],
   devServer: {
     host: 'localhost',
     port: port,
     historyApiFallback: true,
-    open: true
-  }
+    open: true,
+  },
 };
