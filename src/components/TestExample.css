@@ -4,3 +4,26 @@
 .mt50 {
     margin-top: 50px
 }
+.created-date {
+    margin-bottom: 0px;
+    float: right;
+    color: #f1f1f1;
+    /*position: absolute;*/
+    /*font-weight: 900;*/
+    font-size: 47px;
+    margin-top: -10px;
+    z-index: -15;
+}
+.light-badge {
+    font-weight: 100;
+}
+.example-container {
+    padding: 0px;
+}
+.example-container-col {
+    padding-right: 0px;
+}
+.badge-lightgray {
+    color: #fff;
+    background-color: #b8b8b8;
+}

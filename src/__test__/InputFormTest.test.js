@@ -26,7 +26,7 @@ class DynamicChildComponent extends Component {
             <div className="input-group-prepend">
               <span className="input-group-text" id="inputGroup-sizing-default">옵션이름</span>
             </div>
-            <input type="text" className="form-control" aria-label="Sizing example input option-name"
+            <input type="text" className="form-control" aria-label="option-name"
                    aria-describedby="inputGroup-sizing-default"
                    placeholder={"옵션이름을 입력해주세요."}
             />
