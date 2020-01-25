@@ -14,7 +14,7 @@ const TestExampleTag = (props) => {
   );
 };
 const TestExampleCode = (props) => (
-  <pre style={{marginBottom:"1px"}}><code className={props.codeType}>{props.content}</code></pre>
+  <pre style={{marginBottom:"1px"}}><code className={props.codeType} style={{padding:"15px"}}>{props.content}</code></pre>
 );
 const TestExample = (props) => (
   <div>
