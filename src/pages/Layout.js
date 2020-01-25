@@ -9,13 +9,13 @@ const Layout = ({children}) => {
     <Container>
       <Link to="/">
         <Header as="h1" className={h1}>
-          Test References
+          Test Frontend
         </Header>
       </Link>
       {children}
       <Divider/>
-      <p className={pullRight}>
-        Made with <Icon name="heart" color="red"/> by Imdasom
+      <p className={pullRight} style={{marginBottom:"20px"}}>
+        Made with <Icon name="heart" color="red"/> by Imdasom <Icon name="github"></Icon> <a href="https://github.com/imdasom/tdd">github</a>
       </p>
     </Container>
   );
