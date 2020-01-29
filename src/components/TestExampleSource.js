@@ -1,11 +1,60 @@
 import React, { Component } from 'react';
 import DynamicChildComponent from '../__test__/InputFormTest.test';
 
-let id = 1;
+let id = 0;
 const TestExampleSource = {
   exampleList: [
     {
-      id: id,
+      id: id+=1,
+      created: "20200130",
+      title: "특정요소가 사라졌음 혹은 화면에 없음을 테스트하고 싶을 때",
+      description: "추가버튼을 N번 클릭 시, 더 이상 추가하지 못하도록 추가버튼을 사라지게 하는 케이스가 있었다. 이를 테스트하기 위해 toBeNull을 사용하였다.",
+      tagList: [{type: "REACT", title: "React"}, {type: "TESTING_LIBRARY", title: "@testing/library"}, {type: "JEST", title: "Jest"}],
+      codeList: [
+        {
+          codeType: "javascript",
+          content: `it('메뉴그룹추가버튼 > MAX번 누르면 > 메뉴그룹추가버튼이 사라져야 한다', async () => {
+  const utils = render(<Fragment><OrderMenuManagementMockContainer/></Fragment>);
+  const $addButton = utils.getByText(ADD_MENU_GROUP_TEXT);
+  [...new Array(5)].forEach(value => fireEvent.click($addButton));
+  expect(utils.queryByText(ADD_MENU_GROUP_TEXT)).toBeNull();
+});`
+        },
+      ],
+      childComponent: (()=>{
+        class OrderMenuManagementContainer extends Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              count: 0,
+              canAddItem: true
+            };
+          }
+          onClickAddItem = () => {
+            this.setState({count: this.state.count+=1, canAddItem: this.state.count+1 <= 5});
+          }
+          onResetItemCount = () => {
+            this.setState({count: 0, canAddItem: true});
+          }
+          render () {
+            return (
+              <div>
+                <button className={'btn btn-success'} style={{width: "100%", marginBottom: "7px", visibility: this.state.canAddItem ? 'visible' : 'hidden'}} onClick={this.onClickAddItem}>+ 옵션추가</button>
+                <button className={'btn btn-warning'} style={{width: "100%", marginBottom: "7px"}} onClick={this.onResetItemCount}>초기화</button>
+                <h3>item count</h3>
+                <span>5번 클릭해 보세요</span>
+                <h1>{this.state.count}</h1>
+              </div>
+            );
+          }
+        }
+        return (
+          <div><OrderMenuManagementContainer /></div>
+        );
+      })(),
+    },
+    {
+      id: id+=1,
       created: "20200125",
       title: "mock api 테스트 > /api/palette/1 데이터가 렌더링 되어야 한다",
       description: "axios에서 제공하는 mock api를 활용한다. 특정 api reqeust에 대한 response를 지정할 수 있다.",
