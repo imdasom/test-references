@@ -1,3 +1,3 @@
 # tdd
-frontend test references
+test references & examples
 https://imdasom.github.io/tdd
