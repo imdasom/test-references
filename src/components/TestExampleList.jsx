@@ -26,9 +26,9 @@ const TestExample = (props) => (
         props.tagList.length === 0 ? '' :
           props.tagList.map((tag)=>{
             return (
-              <Fragment>
+              <Fragment key={tag.type}>
                 <span className={ml5}></span>
-                <TestExampleTag key={tag.type} {...tag}/>
+                <TestExampleTag {...tag}/>
               </Fragment>
             );
           })
@@ -37,7 +37,7 @@ const TestExample = (props) => (
     <div className={`container ${exampleContainer}`}>
       <div className="row">
         <div className={`col ${exampleContainerCol}`}>
-          { props.codeList.length === 0 ? '' : props.codeList.map(code=><TestExampleCode {...code}/>) }
+          { props.codeList.length === 0 ? '' : props.codeList.map((code, index)=><TestExampleCode {...code} key={index} id={index}/>) }
         </div>
         <div className="col" style={{padding:"10px", marginBottom:"1px", backgroundColor:"#efefef"}}>
           <div dangerouslySetInnerHTML={ {__html: props.html} } />

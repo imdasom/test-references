@@ -21,8 +21,8 @@ class DynamicChildComponent extends Component {
         <button className={'btn btn-success'} style={{width: "100%", marginBottom: "7px"}} onClick={this.onClickAddItem}>+ 옵션추가</button>
         <button className={'btn btn-warning'} style={{width: "100%", marginBottom: "7px"}} onClick={this.onResetItemCount}>옵션리스트 초기화</button>
         <h5>옵션리스트</h5>
-        { this.state.itemList.map(()=>
-          <div className="input-group mb-3">
+        { this.state.itemList.map((item)=>
+          <div key={item.itemName} className="input-group mb-3">
             <div className="input-group-prepend">
               <span className="input-group-text" id="inputGroup-sizing-default">옵션이름</span>
             </div>
