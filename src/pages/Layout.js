@@ -8,14 +8,19 @@ const Layout = ({children}) => {
   return (
     <Container>
       <Link to="/">
-        <Header as="h1" className={h1}>
-          Test Frontend
-        </Header>
+        <h1 as="h1" className={h1}>
+          Frontend Testcase
+        </h1>
       </Link>
+      {/*<Link to="/back">*/}
+      {/*  <Header as="h1" className={h1}>*/}
+      {/*    Spring Spock Junit Groovy*/}
+      {/*  </Header>*/}
+      {/*</Link>*/}
       {children}
       <Divider/>
       <p className={pullRight} style={{marginBottom:"20px"}}>
-        Made with <Icon name="heart" color="red"/> by Imdasom <Icon name="github"></Icon> <a href="https://github.com/imdasom/tdd">github</a>
+        Made with <Icon name="heart" color="red"/> by Imdasom <Icon name="github"></Icon> <a href="https://github.com/imdasom/tdd" target="_blank">github</a>
       </p>
     </Container>
   );

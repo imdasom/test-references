@@ -10,3 +10,7 @@ body h1, h2, h3, h4, h5 {
     font-family: 'Noto Sans KR', 'Gothic A1', 'Nanum Gothic Coding', 'Noto Sans KR', 'Jeju Gothic', sans-serif;
     font-weight: 100;
 }
+
+a {
+    color: black;
+}
