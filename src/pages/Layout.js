@@ -20,7 +20,7 @@ const Layout = ({children}) => {
       {children}
       <Divider/>
       <p className={pullRight} style={{marginBottom:"20px"}}>
-        Made with <Icon name="heart" color="red"/> by Imdasom <Icon name="github"></Icon> <a href="https://github.com/imdasom/tdd" target="_blank">github</a>
+        Release Date 2020-02-15 / Made with <Icon name="heart" color="red"/> by Imdasom <Icon name="github"></Icon> <a href="https://github.com/imdasom/tdd" target="_blank">github</a>
       </p>
     </Container>
   );
